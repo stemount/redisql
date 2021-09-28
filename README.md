@@ -1,5 +1,5 @@
 <div align="center">
-	<img src="./logo.svg" width="250px"/> 
+	<img src="./logo.svg" width="250px"/>
 	<h1>redisql</h1>
 </div>
 
@@ -18,7 +18,7 @@
 
 ## CLI
 
-### Installation and Configuration: 
+### Installation and Configuration:
 
 ```bash
 go install github.com/DGKSK8LIFE/redisql/redisql
@@ -28,8 +28,8 @@ Create a YAML file with the following structure:
 
 ```yaml
 sqltype:
-sqluser: 
-sqlpassword: 
+sqluser:
+sqlpassword:
 sqldatabase:
 sqlhost:
 sqlport:
@@ -43,7 +43,7 @@ log:
 
 ```bash
 # copy to redis string
-redisql copy -type=string -config=pathtofile.yml 
+redisql copy -type=string -config=pathtofile.yml
 
 # copy to redis list
 redisql copy -type=list -config=pathtofile.yml
@@ -98,14 +98,19 @@ config.CopyToList()
 config.CopyToHash()
 ```
 
-## Contributing 
+## Contributing
 
 Check out [CONTRIBUTING](CONTRIBUTING.md)
 
 ## Current Functionality and Limitations
 
-- [x] Simple copying of entire MySQL tables to Redis via CLI and Go Module 
-- [x] Improved logs (optional CLI output, improved formatting)	
+- [x] Simple copying of entire MySQL tables to Redis via CLI and Go Module
+- [x] Improved logs (optional CLI output, improved formatting)
 - [x] Support for most commonly used Redis data types (strings, lists, hashes)
 - [X] Support for Postgres
 - [ ] Autosync
+- [ ] README extension explaining:
+	- [ ] Committing VSCode, IntelliJ or dev container settings like GitPod and codespaces
+	- [ ] Explaining the Docker box
+	- [ ] Further information about the code test suite.
+- [ ] Create a project board for tickets.
