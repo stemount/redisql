@@ -1,6 +1,5 @@
 <div align="center">
-	<img src="./logo.svg" width="250px"/>
-	<h1>redisql</h1>
+	<img src="./banner.png" width="100%"/>
 </div>
 
 <div align="center">
@@ -36,7 +35,6 @@ sqlport:
 sqltable:
 redisaddr:
 redispass:
-log:
 ```
 
 ### Usage:
@@ -79,7 +77,6 @@ func main() {
 		SQLTable:    "user",
 		RedisAddr:   "localhost:6379",
 		RedisPass:   "",
-		Log:         false,
 	}
 	err := config.CopyToString()
 	if err != nil {

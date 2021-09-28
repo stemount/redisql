@@ -7,7 +7,6 @@ import (
 	redisql "github.com/DGKSK8LIFE/redisql"
 )
 
-var config redisql.Config
 var dataType *string
 var file *string
 
