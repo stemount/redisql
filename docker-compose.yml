@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports: ["6379"]
+    networks:
+      - sigma
+
+  db:
+    image: postgres:13-alpine
+    container_name: db
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
+    networks:
+      - sigma
+    environment:
+      POSTGRES_USER: 'root'
+      POSTGRES_PASSWORD: 'password'
+      POSTGRES_DB: 'default'
+
+  go:
+    build:
+      context: .
+    container_name: go
+    volumes:
+      - ./:/go/src/app
+    depends_on:
+      - db
+      - redis
+    networks:
+      - sigma
+
+volumes:
+  container:
+    driver: 'local'
+  db-data:
+    driver: 'local'
+
+networks:
+  sigma:
